@@ -1,0 +1,126 @@
+//=============================================================================
+// _common.scss
+//=============================================================================
+  
+//=============================================================================
+// 
+// -----
+// Index:
+// -----
+//      ** Reset
+//      ** Fonts
+//      ** Containers
+//      ** Padding
+//      ** Buttons
+
+//=============================================================================
+// _variables.scss - Reset
+//=============================================================================
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+//=============================================================================
+// _variables.scss - Fonts
+//=============================================================================
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text-link {
+    @include text-link;
+
+    &:hover {
+        @include text-link-hover;
+    }
+
+    &:active {
+        @include text-link-active;
+    }
+}
+
+//=============================================================================
+// _variables.scss - Containers
+//=============================================================================
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.flex {
+
+    display: flex;
+
+    &-row {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &-column {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
+
+//=============================================================================
+// _variables.scss - Padding
+//=============================================================================
+
+@for $i from 1 through 5 {
+    .padding-#{$i * 10} {
+        padding: $i * 10px 0;
+    }
+}
+
+//=============================================================================
+// _variables.scss - Buttons
+//=============================================================================
+
+.btn-full {
+
+    @include btn-full;
+
+    a {
+        @include text-link;
+    }
+
+    &:hover {
+        @include btn-full-hover;
+
+        a {
+            color: $color-cube-white;
+        }
+    }
+
+    &:active {
+        @include btn-full-active;
+
+        a {
+            @include text-link-active;
+        }
+    }
+}

@@ -19,6 +19,8 @@
   "homepage": "https://github.com/catalin-zahariea/proj-html-vuejs#readme",
   "devDependencies": {
     "laravel-mix": "^6.0.19",
-    "postcss": "^8.2.14"
+    "postcss": "^8.2.14",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.1.0"
   }
 }

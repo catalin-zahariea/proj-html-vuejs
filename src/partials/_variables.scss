@@ -1,0 +1,44 @@
+//=============================================================================
+// _variables.scss
+//=============================================================================
+ 
+//=============================================================================
+// 
+// -----
+// Index:
+// -----
+//      ** Color cube
+//      ** Median cut
+//      ** Material design
+
+//=============================================================================
+// _variables.scss - Color cube
+//=============================================================================
+
+$color-cube-white: #ffffff;
+$color-cube-tuna: #353841;
+$color-cube-burnt-sienna: #ed6864;
+$color-cube-french-gray: #bababc;
+$color-cube-jumbo: #78787b;
+$color-cube-goldenrod: #fcd66c;
+$color-cube-tabasco: #92340f;
+
+//=============================================================================
+// _variables.scss - Median cut
+//=============================================================================
+
+$median-cut-rose-fog: #ebcac5;
+$median-cut-tuna: $color-cube-tuna;
+$median-cut-makara: #8d7c6d;
+$median-cut-edward: #a1aba9;
+$median-cut-regent-gray: #8c9aa5;
+
+//=============================================================================
+// _variables.scss - Material Design
+//=============================================================================
+
+$material-design-burnt-sienna: $color-cube-burnt-sienna;
+$material-design-gray-chateu: #a2abae;
+$material-design-sambuca: #3d2512;
+$material-design-thunder: #171216;
+$material-design-putty: #e9c899;

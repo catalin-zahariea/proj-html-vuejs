@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-link {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: all 0.1s;
+}
+.text-link:hover {
+  color: #fcd66c;
+  cursor: pointer;
+}
+.text-link:active {
+  color: #fcd66c;
+  transform: scale(0.95);
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+  align-items: center;
+}
+.flex-column {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.padding-10 {
+  padding: 10px 0;
+}
+
+.padding-20 {
+  padding: 20px 0;
+}
+
+.padding-30 {
+  padding: 30px 0;
+}
+
+.padding-40 {
+  padding: 40px 0;
+}
+
+.padding-50 {
+  padding: 50px 0;
+}
+
+.btn-full {
+  padding: 10px 30px;
+  background-color: #fcd66c;
+  transition: all 0.1s;
+}
+.btn-full a {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: all 0.1s;
+}
+.btn-full:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+.btn-full:hover a {
+  color: #ffffff;
+}
+.btn-full:active {
+  color: #fcd66c;
+  background-color: #ffffff;
+  transform: scale(0.95);
+  cursor: pointer;
+}
+.btn-full:active a {
+  color: #fcd66c;
+  transform: scale(0.95);
+  cursor: pointer;
+}
+
+header {
+  background-color: #78787b;
+}
+header .flex {
+  justify-content: space-between;
+}
+header .header-logo {
+  width: 250px;
+}
+header .header-nav-bar ul li {
+  margin-left: 50px;
+}

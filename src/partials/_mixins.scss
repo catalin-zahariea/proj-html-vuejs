@@ -1,0 +1,55 @@
+//=============================================================================
+// _mixins.scss
+//=============================================================================
+ 
+//=============================================================================
+// 
+// -----
+// Index:
+// -----
+//      ** Buttons
+//      ** Fonts
+
+//=============================================================================
+// _variables.scss - Buttons
+//=============================================================================
+
+@mixin btn-full {
+    padding: 10px 30px;
+    background-color: $color-cube-goldenrod;
+    transition: all 0.1s;
+}
+
+@mixin btn-full-hover {
+    color: $color-cube-white;
+    cursor: pointer;
+}
+
+@mixin btn-full-active {
+    color: $color-cube-goldenrod;
+    background-color: $color-cube-white;
+    transform: scale(0.95);
+    cursor: pointer;
+}
+
+//=============================================================================
+// _variables.scss - Fonts
+//=============================================================================
+
+@mixin text-link {
+    color: $color-cube-white;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: all 0.1s;
+}
+
+@mixin text-link-hover {
+    color: $color-cube-goldenrod;
+    cursor: pointer;
+}
+
+@mixin text-link-active {
+    color: $color-cube-goldenrod;
+    transform: scale(0.95);
+    cursor: pointer;
+}

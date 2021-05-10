@@ -8,8 +8,50 @@
 
     <!-- Link Custom CSS -->
     <link rel="stylesheet" href="dist/app.css">
+
+    <!-- Link Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <!-- Link Vue.js v2.6.12 -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-    
+    <div id="root">
+
+        <!-- HEADER -->
+        <header>
+            <div class="container padding-20">
+                <div class="flex flex-row">
+                    <!-- HEADER LOGO -->
+                    <div class="header-logo">
+                        <img src="images/avada-charity-logo.png" alt="Avada Charity Logo">
+                    </div>
+                    <!-- END HEADER LOGO -->
+
+                    <!-- HEADER NAV BAR -->
+                    <div class="header-nav-bar">
+                        <ul>
+                            <li
+                                v-for="item in navBarLinks"
+                                class="text-link"
+                                :class="{'btn-full': item.name == 'donate'}"
+                            >
+                                <a :href="item.link" class="text-link">
+                                    {{ item.name }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END HEADER NAV BAR -->
+                </div>
+            </div>
+        </header>
+        <!-- END HEADER -->
+
+        <!-- Link Custom JS -->
+        <script src="dist/app.js"></script>
+    </div>
 </body>
 </html>
