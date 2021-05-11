@@ -9,6 +9,7 @@
 // -----
 //      ** Reset
 //      ** Fonts
+//      ** Backgrounds
 //      ** Containers
 //      ** Padding
 //      ** Buttons
@@ -78,8 +79,16 @@ h2::before {
     background-color: $color-cube-goldenrod;
     width: 150px;
     height: 3px;
-    left: 0;
+    left: 50%;
     bottom: -5px;
+    transform: translateX(-50%);
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: $color-cube-white;
+    font-weight: 300;
 }
 
 .text-link {
@@ -94,9 +103,21 @@ h2::before {
     }
 }
 
-.text-subtitle {
+.text-subtitle-white {
     color: $color-cube-white;
     font-size: 18px;
+    padding-top: 30px;
+}
+
+.text-subtitle-dark {
+    color: $color-cube-tuna;
+    font-size: 18px;
+    padding-top: 30px;
+}
+
+.text-subtitle-gold {
+    color: $color-cube-goldenrod;
+    font-size: 16px;
 }
 
 .text-body {
@@ -119,11 +140,25 @@ h2::before {
 }
 
 //=============================================================================
+// _common.scss - Backgrounds
+//=============================================================================
+
+.background-red {
+    background-color: $color-cube-burnt-sienna;
+}
+
+//=============================================================================
 // _common.scss - Containers
 //=============================================================================
 
 .container {
     max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.container-small {
+    max-width: 900px;
     margin: auto;
     padding: 0 20px;
 }

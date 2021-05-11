@@ -65,7 +65,7 @@
     
                             <!-- PAYOFF -->
                             <div class="header-jumbotron-payoff">
-                                <div class="text-subtitle padding-30">
+                                <div class="text-subtitle-white padding-30">
                                     As long as poverty, injustice & inequality persist, none of us can truly rest
                                 </div>
                             </div>
@@ -140,12 +140,12 @@
                 <div class="container padding-100">
 
                     <h2 class="text-center">Our Values</h2>
-                    <div class="text-subtitle text-center">Think Big. Act Bigger.</div>
+                    <div class="text-subtitle-white text-center">Think Big. Act Bigger.</div>
 
                     <ul class="flex flex-row padding-50">
                         <li v-for="item in values" class="text-center">
                             <div><i class="icon" :class="item.icon"></i></div>
-                            <div class="text-subtitle">{{ item.name }}</div>
+                            <div class="text-subtitle-white">{{ item.name }}</div>
                             <div class="text-body padding-20">{{ item.description }}</div>
                             <button class="btn-full">Learn more</button>
                         </li>
@@ -153,9 +153,107 @@
                 </div>
             </section>
             <!-- END VALUES -->
-            
+
+            <!-- RECENT CAUSES -->
+            <section class="recent-causes">
+                <div class="container padding-100">
+
+                    <h2 class="text-center">Recent Causes</h2>
+                    <div class="text-subtitle-dark text-center">We run projects in over 30 countries in 5 continents</div>
+
+                    <ul class="flex flex-row">
+                        <li v-for="item in recentCauses">
+                            <img :src="'images/' + item.link" :alt="item.alt">
+                        </li>
+                    </ul>
+                    
+                </div>
+
+                <div class="background-red padding-50 text-center">
+                    <h3>View all our causes</h3>
+                </div>
+            </section>
+            <!-- END RECENT CAUSES -->
+
+            <!-- LATEST ARTICLES -->
+            <section class="latest-articles">
+                <div class="container-small padding-100">
+
+                    <h2 class="text-center">Latest Articles</h2>
+                    <div class="text-subtitle-dark text-center">Together we make all the difference</div>    
+
+                    <div class="padding-50">
+                        <ul class="flex flex-column">
+                            <li v-for="item in featuredArtciles">
+                                <div class="flex flex-row">
+                                    
+                                    <img :src="'images/' + item.link" :alt="item.name">
+    
+                                    <span class="article-info">
+                                        <div class="text-subtitle-gold">{{ item.name }}</div>
+                                        <div class="text-body">{{ item.description }}</div>
+                                    </span>
+    
+                                </div>  
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="background-red text-center padding-10">
+                        <h3>View all our articles</h3>
+                    </div>
+
+                </div>
+            </section>
+            <!-- END LATEST ARTICLES -->
+
         </main>
         <!-- END MAIN -->
+
+        <!-- FOOTER -->
+        <footer>
+
+            <!-- FOOTER JUMBO -->
+            <div class="footer-jumbo padding-100">
+                <div class="container">
+                    <h2 class="text-center">Latest Articles</h2>
+                    <div class="text-subtitle-white text-center padding-50">
+                        As long as poverty, injustice & inequality persist, none of us can truly rest. It doesn't take much to change a life. Get in touch today and start making the difference.
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="btn-border btn-border-white">Volunteer</button>
+                        <button class="btn-border btn-border-white">Donate now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- END FOOTER JUMBO -->
+
+            <!-- FOOTER LOGO -->
+            <div class="footer-logo padding-30 text-center">
+                <img src="images/avada-charity-mobile-logo-retina.png" alt="Avada Charity Logo">
+            </div>
+            <!-- END FOOTER LOGO -->
+
+            <!-- FOOTER COPYRIGHT -->
+            <div class="footer-copyright padding-20">
+                <div class="text-center">
+                    <i class="far fa-copyright"></i>
+                    Copyright 2012 - 2020 AVADA THEME BY THEME FUSION | ALL RIGHT RESERVED | POWERED BY WORDPRESS
+                </div>
+
+                <ul class="text-center">
+                    <li v-for="item in socialMedia">
+                        <a :href="item.link">
+                            <i :class="item.icon"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END FOOTER COPYRIGHT -->
+            
+        </footer>
+        <!-- END FOOTER -->
 
         <!-- Link Custom JS -->
         <script src="dist/app.js"></script>

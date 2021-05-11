@@ -1,0 +1,80 @@
+//=============================================================================
+// _footer.scss
+//=============================================================================
+ 
+//=============================================================================
+// 
+// -----
+// Index:
+// -----
+//      ** Footer Jumbo
+
+footer {
+
+//=============================================================================
+// _variables.scss - Footer Jumbo
+//=============================================================================
+
+    .footer-jumbo {
+        background-image: url(../../images/home-footer.jpg);
+        background-position: center;
+        background-size: 100%;
+
+        h2 {
+            color: $color-cube-white;
+        }
+
+        .text-subtitle-white {
+            width: 65%;
+            margin: auto;
+        }
+
+        button {
+            margin: 0 10px;
+        }
+    }
+
+    .footer-logo {
+        
+        img {
+
+            width: 300px;
+        }
+    }
+
+    .footer-copyright {
+        background-color: rgba($color: $color-cube-french-gray, $alpha: 0.1);
+        font-size: 8px;
+        color: $color-cube-jumbo;
+
+        &>div {
+            letter-spacing: 2px;
+        }
+
+        ul {
+
+            padding-top: 20px;
+
+            li {
+                
+                background-color: $color-cube-white;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                padding: 10px;
+                margin: 0 5px;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    i {
+                        color: $color-cube-goldenrod;
+                        font-size: 20px;
+                    }
+                }  
+            }
+        }
+    }
+}
