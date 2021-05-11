@@ -11,17 +11,20 @@
 //      ** Fonts
 
 //=============================================================================
-// _variables.scss - Buttons
+// _mixins.scss - Buttons
 //=============================================================================
 
 @mixin btn-full {
     padding: 10px 30px;
     background-color: $color-cube-goldenrod;
+    border: none;
     transition: all 0.1s;
+    // Font
+    text-transform: uppercase;
+    color: $color-cube-white;
 }
 
 @mixin btn-full-hover {
-    color: $color-cube-white;
     cursor: pointer;
 }
 
@@ -32,8 +35,28 @@
     cursor: pointer;
 }
 
+@mixin btn-border {
+    padding: 10px 30px;
+    background-color: transparent;
+    border: 1px solid $color-cube-white;
+    transition: all 0.1s;
+    // Font
+    text-transform: uppercase;
+    color: $color-cube-white;
+}
+
+@mixin btn-border-hover {
+    cursor: pointer;
+}
+
+@mixin btn-border-active {
+    transform: scale(0.95);
+    cursor: pointer;
+}
+
+
 //=============================================================================
-// _variables.scss - Fonts
+// _mixins.scss - Fonts
 //=============================================================================
 
 @mixin text-link {

@@ -1,0 +1,78 @@
+//=============================================================================
+// _content.scss
+//=============================================================================
+ 
+//=============================================================================
+// 
+// -----
+// Index:
+// -----
+//      ** Achievements
+//      ** Values
+
+//=============================================================================
+// _content.scss - Achievements
+//=============================================================================
+
+.achievements {
+    .flex {
+        &> div {
+            width: 65%;
+            padding: 50px;
+        }
+
+        ul {
+
+            padding: 100px;
+            width: 35%;
+            background-image: url(../../images/home-content-bg-1.jpg);
+            background-position: center;
+            background-size: 100%;
+
+            li {
+                display: block;
+            }
+        }
+    }
+}
+
+//=============================================================================
+// _content.scss - Values
+//=============================================================================
+
+.values {
+
+    background-image: url(../../images/home-content-bg-2.jpg);
+    background-size: 100%;
+    background-position: center;
+
+    h2{
+        color: $color-cube-white;
+    }
+
+    h2::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .text-subtitle {
+        padding-top: 30px;
+    }
+
+    ul {
+        li {
+            
+            padding: 0 10px;
+
+            .icon {
+                color: $color-cube-goldenrod;
+                font-size: 56px;
+            }
+
+            .text-body {
+                color: $color-cube-white;
+                font-size: 12px;
+            }
+        }
+    }
+}

@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charity</title>
 
-    <!-- Link Custom CSS -->
-    <link rel="stylesheet" href="dist/app.css">
-
     <!-- Link Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+    <!-- Link Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+    <!-- Link Custom CSS -->
+    <link rel="stylesheet" href="dist/app.css">
 
     <!-- Link Vue.js v2.6.12 -->
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -22,33 +24,138 @@
 
         <!-- HEADER -->
         <header>
-            <div class="container padding-20">
-                <div class="flex flex-row">
-                    <!-- HEADER LOGO -->
-                    <div class="header-logo">
-                        <img src="images/avada-charity-logo.png" alt="Avada Charity Logo">
+            <div class="header-overlay">
+                <div class="container padding-20">
+                    <!-- HEADER TOP BAR -->
+                    <div class="flex flex-row">
+                        <!-- HEADER LOGO -->
+                        <div class="header-logo">
+                            <img src="images/avada-charity-logo.png" alt="Avada Charity Logo">
+                        </div>
+                        <!-- END HEADER LOGO -->
+    
+                        <!-- HEADER NAV BAR -->
+                        <div class="header-nav-bar">
+                            <ul>
+                                <li
+                                    v-for="item in navBarLinks"
+                                    class="text-link"
+                                    :class="{'btn-full': item.name == 'donate'}"
+                                >
+                                    <a :href="item.link" class="text-link">
+                                        {{ item.name }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <button class="btn-full">
+                                        Donate
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END HEADER NAV BAR -->
                     </div>
-                    <!-- END HEADER LOGO -->
-
-                    <!-- HEADER NAV BAR -->
-                    <div class="header-nav-bar">
-                        <ul>
-                            <li
-                                v-for="item in navBarLinks"
-                                class="text-link"
-                                :class="{'btn-full': item.name == 'donate'}"
-                            >
-                                <a :href="item.link" class="text-link">
-                                    {{ item.name }}
-                                </a>
-                            </li>
-                        </ul>
+                    <!-- END HEADER TOP BAR -->
+    
+                    <!-- HEADER JUMBOTRON -->
+                    <div class="header-jumbotron text-center">
+                        <div class="flex flex-column">
+                            <!-- MAIN TITLE -->
+                            <h1>Make a difference</h1>
+    
+                            <!-- PAYOFF -->
+                            <div class="header-jumbotron-payoff">
+                                <div class="text-subtitle padding-30">
+                                    As long as poverty, injustice & inequality persist, none of us can truly rest
+                                </div>
+                            </div>
+    
+                            <!-- BUTTONS -->
+                            <div>
+                                <ul>
+                                    <li>
+                                        <button class="btn-border btn-border-white">
+                                            Our mission
+                                        </button>
+                                    </li>
+    
+                                    <li>
+                                        <button class="btn-border btn-border-golden">
+                                            Donate now
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <!-- END HEADER NAV BAR -->
+                    <!-- END HEADER JUMBOTRON -->
                 </div>
             </div>
         </header>
         <!-- END HEADER -->
+
+        <!-- MAIN -->
+        <main>
+
+            <!-- ACHIEVEMENTS -->
+            <section class="achievements">
+                <div class="flex flex-row">
+                    <div>
+                        <h2>Every moment counts</h2>
+                        
+                        <div class="padding-40 text-body">
+                            Curabitur non mi et turpis pharetra vulputate. Cras consequat, risus nec commodo vehicula, nisi est laoreet leo, ac convallis nisi nibh id velit. Aliquam mattis metus a nisi pretium.
+                            <br>
+                            <br>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac nibh vestibulum, laoreet ipsum quis, vestibulum nisi. Curabitur non mi et turpis pharetra vulputate. Ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac nibh vestibulum, laoreet ipsum quis, vestibulum nisi.
+                            <br>
+                            <br>
+                            Curabitur non mi et turpis pharetra vulputate. Cras consequat, risus nec commodo vehicula, nisi est laoreet leo, ac convallis nisi nibh id velit.
+                        </div>
+
+                        <div>
+                            <button class="btn-full">
+                                Our mission
+                            </button>
+                        </div>
+                    </div>
+
+                    <ul class="text-center">
+                        <li v-for="item in achievements" class="padding-40">
+                            <div class="achievements-title">
+                                <i :class="item.icon"></i>
+                                {{ item.number }}
+                            </div>
+                            <div class="achievements-body">
+                                {{ item.name }}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- END ACHIEVEMENTS -->
+
+            <!-- VALUES -->
+            <section class="values">
+                <div class="container padding-100">
+
+                    <h2 class="text-center">Our Values</h2>
+                    <div class="text-subtitle text-center">Think Big. Act Bigger.</div>
+
+                    <ul class="flex flex-row padding-50">
+                        <li v-for="item in values" class="text-center">
+                            <div><i class="icon" :class="item.icon"></i></div>
+                            <div class="text-subtitle">{{ item.name }}</div>
+                            <div class="text-body padding-20">{{ item.description }}</div>
+                            <button class="btn-full">Learn more</button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- END VALUES -->
+            
+        </main>
+        <!-- END MAIN -->
 
         <!-- Link Custom JS -->
         <script src="dist/app.js"></script>

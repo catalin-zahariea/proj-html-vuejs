@@ -14,7 +14,7 @@
 //      ** Buttons
 
 //=============================================================================
-// _variables.scss - Reset
+// _common.scss - Reset
 //=============================================================================
 
 * {
@@ -41,11 +41,45 @@ a {
 }
 
 //=============================================================================
-// _variables.scss - Fonts
+// _common.scss - Fonts
 //=============================================================================
 
 body {
     font-family: 'Montserrat', sans-serif;
+}
+
+.text-center {
+    text-align: center
+}
+
+h1 {
+    color: $color-cube-white;
+    font-size: 56px;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    color: $color-cube-tuna;
+    font-size: 36px;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 0;
+    padding-bottom: 20px;
+    margin: 0;
+    position: relative;
+}
+
+h2::before {
+    content: "";
+    position: absolute;
+    background-color: $color-cube-goldenrod;
+    width: 150px;
+    height: 3px;
+    left: 0;
+    bottom: -5px;
 }
 
 .text-link {
@@ -60,8 +94,32 @@ body {
     }
 }
 
+.text-subtitle {
+    color: $color-cube-white;
+    font-size: 18px;
+}
+
+.text-body {
+    color: $color-cube-tuna;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+.achievements-title {
+    color: $color-cube-white;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.achievements-body {
+    color: $color-cube-white;
+    font-size: 18px;
+    font-weight: 400;
+}
+
 //=============================================================================
-// _variables.scss - Containers
+// _common.scss - Containers
 //=============================================================================
 
 .container {
@@ -87,40 +145,62 @@ body {
 }
 
 //=============================================================================
-// _variables.scss - Padding
+// _common.scss - Padding
 //=============================================================================
 
-@for $i from 1 through 5 {
+@for $i from 1 through 10 {
     .padding-#{$i * 10} {
         padding: $i * 10px 0;
     }
 }
 
 //=============================================================================
-// _variables.scss - Buttons
+// _common.scss - Buttons
 //=============================================================================
 
 .btn-full {
 
     @include btn-full;
 
-    a {
-        @include text-link;
-    }
-
     &:hover {
         @include btn-full-hover;
-
-        a {
-            color: $color-cube-white;
-        }
     }
 
     &:active {
         @include btn-full-active;
 
-        a {
-            @include text-link-active;
+    }
+}
+
+.btn-border {
+
+    @include btn-border;
+
+    &-golden {
+        color: $color-cube-goldenrod;
+        border: 1px solid $color-cube-goldenrod;
+
+        &:active {
+            color: $color-cube-white;
+            background-color: $color-cube-goldenrod;
         }
+    }
+
+    &-white {
+        color: $color-cube-white;
+        border: 1px solid $color-cube-white;
+
+        &:active {
+            color: $color-cube-goldenrod;
+            background-color: $color-cube-white;
+        }
+    }
+
+    &:hover {
+        @include btn-border-hover;
+    }
+
+    &:active {
+        @include btn-border-active;
     }
 }
