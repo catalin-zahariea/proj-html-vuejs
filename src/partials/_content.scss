@@ -7,6 +7,7 @@
 // -----
 // Index:
 // -----
+//      ** Jumbotron
 //      ** Achievements
 //      ** Values
 //      ** Recent Causes
@@ -14,26 +15,71 @@
 
 
 //=============================================================================
+// _header.scss - Header Jumbotron
+//=============================================================================
+
+.jumbotron {
+    background-image: url(../../images/home-page-slider.jpg);
+    @include bg-image;
+    height: 700px;
+    position: relative;
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        button {
+            margin: 0 5px;
+        }
+    }
+}
+
+//=============================================================================
 // _content.scss - Achievements
 //=============================================================================
 
 .achievements {
+
+    position: relative;
+
     .flex {
-        &> div {
+
+        .padding-50 {
             width: 65%;
-            padding: 50px;
+            padding-right: 50px;
+            background-color: $color-cube-white;
+
+            .graphic-divider {
+                margin: 30px 0;
+            }
+            
+            p {
+                padding-bottom: 20px;
+            }
         }
 
-        ul {
+        .achievements-background {
 
-            padding: 100px;
+            position: absolute;
+            z-index: -1;
+            right: 0;
             width: 35%;
+            height: 100%;
             background-image: url(../../images/home-content-bg-1.jpg);
-            background-position: center;
-            background-size: 100%;
+            @include bg-image;
 
-            li {
-                display: block;
+            ul {
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                li {
+                    display: block;
+                    padding: 30px 0;
+                }
             }
         }
     }
@@ -46,21 +92,7 @@
 .values {
 
     background-image: url(../../images/home-content-bg-2.jpg);
-    background-size: 100%;
-    background-position: center;
-
-    h2{
-        color: $color-cube-white;
-    }
-
-    h2::before {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .text-subtitle-white {
-        padding-top: 30px;
-    }
+    @include bg-image;
 
     ul {
         li {
@@ -68,13 +100,7 @@
             padding: 0 10px;
 
             .icon {
-                color: $color-cube-goldenrod;
                 font-size: 56px;
-            }
-
-            .text-body {
-                color: $color-cube-white;
-                font-size: 12px;
             }
         }
     }
@@ -87,8 +113,6 @@
 .recent-causes {
 
     ul {
-
-        padding-top: 50px;
 
         li {
 
@@ -105,52 +129,73 @@
 
 .latest-articles {
 
-    .flex-column {
+    .flex {
 
-        height: 434px;
+        height: 500px;
         justify-content: space-between;
         flex-wrap: wrap;
 
         li {
 
+            width: 50%;
+
+            img {
+
+                float: left;
+                height: 100px;
+                width: 125px;
+            }
+
+            .article-info {
+                width: calc(100% - 125px);
+                float: left;
+                padding-left: 20px;
+
+                .text-subtitle {
+                    font-size: 16px;
+                }
+            }
+
             .text-body {
                 font-size: 12px;
             }
-
-            &:first-child {
                 
-                width: 50%;
-                padding-right: 30px;
-
-                .flex-row {
-                
-                    height: 100%;
-                    flex-direction: column;
-
-                    .article-info {
-                    
-                        height: 100%;
-                        padding: 20px;
-                        box-shadow: 0px 1px 5px 0.1px rgba($color: #000000, $alpha: 0.05);
-                    }
-                }
+            &:hover {
+                cursor: pointer;
             }
 
-            &:not(:first-child) {
+            &:active {
+                transform: scale(0.98);
+            }
+        }
 
-                width: 50%;
+        .featured-article {
 
-                .flex-row {
+            height: 100%;
+            padding-right: 40px;
 
-                    height: 100%;
-                    align-items: flex-start;
-    
-                    img {
-                        width: 125px;
-                        padding-right: 20px;
-                    }
+             img {
+
+                height: 345px;
+                float: none;
+                width: 100%;
+             }
+
+             .article-info {
+
+                float: none;
+                width: 100%;
+                height: 155px;
+                padding: 20px;
+                margin-top: -5px;
+
+                box-shadow: 0px 1px 2px 0.1px rgba($color: #000, $alpha: 0.1);
+
+                .text-subtitle {
+                    font-size: 18px;
+                    padding: 20px 0;
                 }
-            } 
+             }
         }
     }
 }

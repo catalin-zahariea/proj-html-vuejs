@@ -66,26 +66,31 @@ var app = new Vue({
       link: "avada-charity-vaccines-featured.jpg",
       alt: "Charity Vaccines"
     }],
-    featuredArtciles: [{
+    featuredArticles: [{
       link: "photo-1444213007800-cff19e1677ac.jpg",
       name: "Understanding community complexities",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Prasent ac nibh vestibulum, laoreet ipsum."
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Prasent ac nibh vestibulum, laoreet ipsum.",
+      id: 1
     }, {
       link: "photo-1444664597500-035db93e2323-177x142.jpg",
       name: "The human story of uniqueness",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Prasent ac nibh vestibulum, laoreet ipsum."
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Prasent ac nibh vestibulum, laoreet ipsum.",
+      id: 2
     }, {
       link: "photo-1447430617419-95715602278e-177x142.jpg",
       name: "Sustainable trade tactics",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Prasent ac nibh vestibulum, laoreet ipsum."
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Prasent ac nibh vestibulum, laoreet ipsum.",
+      id: 3
     }, {
       link: "photo-1460230525622-630fe3294cd7-177x142.jpg",
       name: "Farmers making a difference",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Prasent ac nibh vestibulum, laoreet ipsum."
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Prasent ac nibh vestibulum, laoreet ipsum.",
+      id: 4
     }, {
       link: "photo-1460600421604-5e138c208b9c-177x142.jpg",
       name: "Meeting remote tribes in Peru",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Prasent ac nibh vestibulum, laoreet ipsum."
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Prasent ac nibh vestibulum, laoreet ipsum.",
+      id: 5
     }],
     socialMedia: [{
       name: "Facebook",
@@ -103,7 +108,32 @@ var app = new Vue({
       name: "Youtube",
       link: "#",
       icon: "fab fa-youtube"
-    }]
+    }],
+    scrollPosition: null
+  },
+  methods: {
+    // ---
+    // This function will swap featured Article on click.
+    // ---
+    swapArticle: function swapArticle(index) {
+      var newValue = this.featuredArticles[index];
+      var oldValue = this.featuredArticles[0]; // ---
+      // Vue.set will make the list reactive when changing order of items.
+      // ---
+
+      Vue.set(this.featuredArticles, 0, newValue);
+      Vue.set(this.featuredArticles, index, oldValue);
+    },
+    // ---
+    // This function will update scrollPosition on scrolling.
+    // It will activate the background of the header Nav Bar.
+    // ---
+    updateScroll: function updateScroll() {
+      this.scrollPosition = window.scrollY;
+    }
+  },
+  mounted: function mounted() {
+    window.addEventListener('scroll', this.updateScroll);
   }
 });
 

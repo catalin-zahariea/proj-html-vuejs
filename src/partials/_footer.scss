@@ -17,14 +17,13 @@ footer {
 
     .footer-jumbo {
         background-image: url(../../images/home-footer.jpg);
-        background-position: center;
-        background-size: 100%;
+        @include bg-image;
 
         h2 {
             color: $color-cube-white;
         }
 
-        .text-subtitle-white {
+        .text-subtitle{
             width: 65%;
             margin: auto;
         }

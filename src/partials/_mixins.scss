@@ -9,6 +9,7 @@
 // -----
 //      ** Buttons
 //      ** Fonts
+//      ** Background
 
 //=============================================================================
 // _mixins.scss - Buttons
@@ -75,4 +76,14 @@
     color: $color-cube-goldenrod;
     transform: scale(0.95);
     cursor: pointer;
+}
+
+//=============================================================================
+// _mixins.scss - Background
+//=============================================================================
+
+@mixin bg-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

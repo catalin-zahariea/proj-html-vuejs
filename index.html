@@ -20,76 +20,38 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
+
+    <!-- Vue.js CONTAINER -->
     <div id="root">
 
         <!-- HEADER -->
-        <header>
-            <div class="header-overlay">
-                <div class="container padding-20">
-                    <!-- HEADER TOP BAR -->
-                    <div class="flex flex-row">
-                        <!-- HEADER LOGO -->
-                        <div class="header-logo">
-                            <img src="images/avada-charity-logo.png" alt="Avada Charity Logo">
-                        </div>
-                        <!-- END HEADER LOGO -->
-    
-                        <!-- HEADER NAV BAR -->
-                        <div class="header-nav-bar">
-                            <ul>
-                                <li
-                                    v-for="item in navBarLinks"
-                                    class="text-link"
-                                    :class="{'btn-full': item.name == 'donate'}"
-                                >
-                                    <a :href="item.link" class="text-link">
-                                        {{ item.name }}
-                                    </a>
-                                </li>
-                                <li>
-                                    <button class="btn-full">
-                                        Donate
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- END HEADER NAV BAR -->
-                    </div>
-                    <!-- END HEADER TOP BAR -->
-    
-                    <!-- HEADER JUMBOTRON -->
-                    <div class="header-jumbotron text-center">
-                        <div class="flex flex-column">
-                            <!-- MAIN TITLE -->
-                            <h1>Make a difference</h1>
-    
-                            <!-- PAYOFF -->
-                            <div class="header-jumbotron-payoff">
-                                <div class="text-subtitle-white padding-30">
-                                    As long as poverty, injustice & inequality persist, none of us can truly rest
-                                </div>
-                            </div>
-    
-                            <!-- BUTTONS -->
-                            <div>
-                                <ul>
-                                    <li>
-                                        <button class="btn-border btn-border-white">
-                                            Our mission
-                                        </button>
-                                    </li>
-    
-                                    <li>
-                                        <button class="btn-border btn-border-golden">
-                                            Donate now
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END HEADER JUMBOTRON -->
+        <header :class="{'background-dark-alpha': scrollPosition > 50}">
+            <div class="container padding-20">
+
+                <div class="flex flex-row">
+                    <!-- HEADER LOGO -->
+                <div class="header-logo">
+                    <img src="images/avada-charity-logo.png" alt="Avada Charity Logo">
                 </div>
+                <!-- END HEADER LOGO -->
+
+                <!-- HEADER NAV BAR -->
+                <ul>
+                    <li v-for="item in navBarLinks">
+                        <a :href="item.link" class="text-link">
+                            {{ item.name }}
+                        </a>
+                    </li>
+                    <!-- DONATE BTN -->
+                    <li>
+                        <button class="btn-full">
+                            Donate
+                        </button>
+                    </li>
+                </ul>
+                <!-- END HEADER NAV BAR -->
+                </div>
+
             </div>
         </header>
         <!-- END HEADER -->
@@ -97,40 +59,72 @@
         <!-- MAIN -->
         <main>
 
+            <!-- JUMBOTRON -->
+            <section class="jumbotron text-center text-light">
+
+                <div class="container">
+                    <!-- MAIN TITLE -->
+                    <h1>Make a difference</h1>
+
+                    <!-- PAYOFF -->
+                    <div class="text-subtitle text-light padding-30">
+                        As long as poverty, injustice & inequality persist, none of us can truly rest
+                    </div>
+
+                    <!-- BUTTONS -->
+                    <div class="padding-top-10">
+                        <button class="btn-border btn-border-white">
+                            Our mission
+                        </button>
+                        <button class="btn-border btn-border-golden">
+                            Donate now
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+            <!-- END JUMBOTRON -->
+            
             <!-- ACHIEVEMENTS -->
             <section class="achievements">
-                <div class="flex flex-row">
-                    <div>
-                        <h2>Every moment counts</h2>
-                        
-                        <div class="padding-40 text-body">
-                            Curabitur non mi et turpis pharetra vulputate. Cras consequat, risus nec commodo vehicula, nisi est laoreet leo, ac convallis nisi nibh id velit. Aliquam mattis metus a nisi pretium.
-                            <br>
-                            <br>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac nibh vestibulum, laoreet ipsum quis, vestibulum nisi. Curabitur non mi et turpis pharetra vulputate. Ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac nibh vestibulum, laoreet ipsum quis, vestibulum nisi.
-                            <br>
-                            <br>
-                            Curabitur non mi et turpis pharetra vulputate. Cras consequat, risus nec commodo vehicula, nisi est laoreet leo, ac convallis nisi nibh id velit.
-                        </div>
+                <div class="container">
+                    <div class="flex flex-row">
+                        <div class="padding-50">
+                            <!-- SECTION TITLE -->
+                            <h2>Every moment counts</h2>
+                            <div class="graphic-divider"></div>
+                            <!-- SECTION DESCRIPTION -->
+                            <div class="text-body">
+                                <p>
+                                    Curabitur non mi et turpis pharetra vulputate. Cras consequat, risus nec commodo vehicula, nisi est laoreet leo, ac convallis nisi nibh id velit. Aliquam mattis metus a nisi pretium.
+                                </p>
 
-                        <div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac nibh vestibulum, laoreet ipsum quis, vestibulum nisi. Curabitur non mi et turpis pharetra vulputate. Ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac nibh vestibulum, laoreet ipsum quis, vestibulum nisi.
+                                </p>
+                                
+                                <p>
+                                    Curabitur non mi et turpis pharetra vulputate. Cras consequat, risus nec commodo vehicula, nisi est laoreet leo, ac convallis nisi nibh id velit.
+                                </p>
+                            </div>
+                            <!-- SECTION BUTTON -->
                             <button class="btn-full">
                                 Our mission
                             </button>
                         </div>
-                    </div>
 
-                    <ul class="text-center">
-                        <li v-for="item in achievements" class="padding-40">
-                            <div class="achievements-title">
-                                <i :class="item.icon"></i>
-                                {{ item.number }}
-                            </div>
-                            <div class="achievements-body">
-                                {{ item.name }}
-                            </div>
-                        </li>
-                    </ul>
+                        <!-- SECTION VUEJS -->
+                        <div class="achievements-background">
+                            <ul class="text-center text-light">
+                                <li v-for="item in achievements">
+                                    <div class="text-title text-light">
+                                        <i :class="item.icon"></i> {{ item.number }}                                                          
+                                    </div>
+                                    <div class="text-subtitle text-light">{{ item.name }}</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </section>
             <!-- END ACHIEVEMENTS -->
@@ -139,14 +133,17 @@
             <section class="values">
                 <div class="container padding-100">
 
-                    <h2 class="text-center">Our Values</h2>
-                    <div class="text-subtitle-white text-center">Think Big. Act Bigger.</div>
+                    <div class="text-center">
+                        <h2 class="text-light">Our Values</h2>
+                        <div class="graphic-divider"></div>
+                        <div class="text-subtitle text-light">Think Big. Act Bigger.</div>
+                    </div>
 
                     <ul class="flex flex-row padding-50">
                         <li v-for="item in values" class="text-center">
-                            <div><i class="icon" :class="item.icon"></i></div>
-                            <div class="text-subtitle-white">{{ item.name }}</div>
-                            <div class="text-body padding-20">{{ item.description }}</div>
+                            <div><i class="icon text-gold padding-bottom-10" :class="item.icon"></i></div>
+                            <div class="text-subtitle text-light">{{ item.name }}</div>
+                            <div class="text-body text-light padding-20">{{ item.description }}</div>
                             <button class="btn-full">Learn more</button>
                         </li>
                     </ul>
@@ -158,10 +155,13 @@
             <section class="recent-causes">
                 <div class="container padding-100">
 
-                    <h2 class="text-center">Recent Causes</h2>
-                    <div class="text-subtitle-dark text-center">We run projects in over 30 countries in 5 continents</div>
+                    <div class="text-center">
+                        <h2>Recent Causes</h2>
+                        <div class="graphic-divider"></div>
+                        <div class="text-subtitle">We run projects in over 30 countries in 5 continents</div>
+                    </div>
 
-                    <ul class="flex flex-row">
+                    <ul class="flex flex-row padding-top-50">
                         <li v-for="item in recentCauses">
                             <img :src="'images/' + item.link" :alt="item.alt">
                         </li>
@@ -170,7 +170,7 @@
                 </div>
 
                 <div class="background-red padding-50 text-center">
-                    <h3>View all our causes</h3>
+                    <h3 class="text-light">View all our causes</h3>
                 </div>
             </section>
             <!-- END RECENT CAUSES -->
@@ -179,28 +179,32 @@
             <section class="latest-articles">
                 <div class="container-small padding-100">
 
-                    <h2 class="text-center">Latest Articles</h2>
-                    <div class="text-subtitle-dark text-center">Together we make all the difference</div>    
+                    <div class="text-center">
+                        <h2>Latest Articles</h2>
+                        <div class="graphic-divider"></div>
+                        <div class="text-subtitle">Together we make all the difference</div>    
+                    </div>
 
                     <div class="padding-50">
                         <ul class="flex flex-column">
-                            <li v-for="item in featuredArtciles">
-                                <div class="flex flex-row">
-                                    
-                                    <img :src="'images/' + item.link" :alt="item.name">
+                            <li
+                                v-for="(item, index) in featuredArticles"
+                                @click="swapArticle(index)"
+                                :key="item.id"
+                                :class="{'featured-article': index == 0}"
+                            >
+                                <img :src="'images/' + item.link" :alt="item.name">
     
-                                    <span class="article-info">
-                                        <div class="text-subtitle-gold">{{ item.name }}</div>
-                                        <div class="text-body">{{ item.description }}</div>
-                                    </span>
-    
-                                </div>  
+                                <div class="article-info">
+                                    <div class="text-subtitle text-gold">{{ item.name }}</div>
+                                    <div class="text-body">{{ item.description }}</div>
+                                </div>
                             </li>
                         </ul>
                     </div>
 
                     <div class="background-red text-center padding-10">
-                        <h3>View all our articles</h3>
+                        <h3 class="text-light">View all our articles</h3>
                     </div>
 
                 </div>
@@ -216,9 +220,13 @@
             <!-- FOOTER JUMBO -->
             <div class="footer-jumbo padding-100">
                 <div class="container">
-                    <h2 class="text-center">Latest Articles</h2>
-                    <div class="text-subtitle-white text-center padding-50">
-                        As long as poverty, injustice & inequality persist, none of us can truly rest. It doesn't take much to change a life. Get in touch today and start making the difference.
+
+                    <div class="text-center">
+                        <h2 class="text-center">Change a life today</h2>
+                        <div class="graphic-divider"></div>
+                        <div class="text-subtitle text-light padding-bottom-30">
+                            As long as poverty, injustice & inequality persist, none of us can truly rest. It doesn't take much to change a life. Get in touch today and start making the difference.
+                        </div>
                     </div>
                     
                     <div class="text-center">
@@ -257,6 +265,9 @@
 
         <!-- Link Custom JS -->
         <script src="dist/app.js"></script>
+
     </div>
+    <!-- END Vue.js CONTAINER -->
+
 </body>
 </html>

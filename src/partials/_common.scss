@@ -13,6 +13,7 @@
 //      ** Containers
 //      ** Padding
 //      ** Buttons
+//      ** Graphics
 
 //=============================================================================
 // _common.scss - Reset
@@ -54,41 +55,30 @@ body {
 }
 
 h1 {
-    color: $color-cube-white;
-    font-size: 56px;
+    font-size: 48px;
     font-weight: 300;
     text-transform: uppercase;
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
 }
 
 h2 {
-    color: $color-cube-tuna;
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 300;
     text-transform: uppercase;
     padding: 0;
-    padding-bottom: 20px;
     margin: 0;
-    position: relative;
-}
-
-h2::before {
-    content: "";
-    position: absolute;
-    background-color: $color-cube-goldenrod;
-    width: 150px;
-    height: 3px;
-    left: 50%;
-    bottom: -5px;
-    transform: translateX(-50%);
 }
 
 h3 {
     text-transform: uppercase;
     font-size: 16px;
-    color: $color-cube-white;
     font-weight: 300;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
 }
 
 .text-link {
@@ -103,40 +93,33 @@ h3 {
     }
 }
 
-.text-subtitle-white {
-    color: $color-cube-white;
-    font-size: 18px;
-    padding-top: 30px;
+.text-title {
+    color: $color-cube-tuna;
+    font-size: 36px;
 }
 
-.text-subtitle-dark {
+.text-subtitle {
     color: $color-cube-tuna;
     font-size: 18px;
-    padding-top: 30px;
-}
-
-.text-subtitle-gold {
-    color: $color-cube-goldenrod;
-    font-size: 16px;
 }
 
 .text-body {
     color: $color-cube-tuna;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
-    line-height: 30px;
+    line-height: 24px;
 }
 
-.achievements-title {
+.text-light {
     color: $color-cube-white;
-    font-size: 36px;
-    font-weight: 500;
 }
 
-.achievements-body {
-    color: $color-cube-white;
-    font-size: 18px;
-    font-weight: 400;
+.text-dark {
+    color: $color-cube-tuna;
+}
+
+.text-gold {
+    color: $color-cube-goldenrod;
 }
 
 //=============================================================================
@@ -145,6 +128,10 @@ h3 {
 
 .background-red {
     background-color: $color-cube-burnt-sienna;
+}
+
+.background-dark-alpha {
+    background-color: rgba($color: $color-cube-tuna, $alpha: 0.75);
 }
 
 //=============================================================================
@@ -158,7 +145,7 @@ h3 {
 }
 
 .container-small {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
     padding: 0 20px;
 }
@@ -186,6 +173,18 @@ h3 {
 @for $i from 1 through 10 {
     .padding-#{$i * 10} {
         padding: $i * 10px 0;
+    }
+}
+
+@for $i from 1 through 5 {
+    .padding-top-#{$i * 10} {
+        padding-top: $i * 10px;
+    }
+}
+
+@for $i from 1 through 5 {
+    .padding-bottom-#{$i * 10} {
+        padding-bottom: $i * 10px;
     }
 }
 
@@ -238,4 +237,15 @@ h3 {
     &:active {
         @include btn-border-active;
     }
+}
+
+//=============================================================================
+// _common.scss - Graphics
+//=============================================================================
+
+.graphic-divider {
+    background-color: $color-cube-goldenrod;
+    height: 2px;
+    width: 150px;
+    margin: 30px auto;
 }

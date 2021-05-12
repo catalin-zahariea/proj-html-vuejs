@@ -7,67 +7,39 @@
 // -----
 // Index:
 // -----
-//      ** Header Logo
-//      ** Header Nav Bar
-//      ** Header Jumbotron
+//      ** Header
+
 
 header {
 
-    background-image: url(../../images/home-page-slider.jpg);
-    background-position: center;
-    background-size: 100%;
-    height: 800px;
-    position: relative;
-    
-    .header-overlay {
-        height: 100%;
-        background-color: rgba($color: $color-cube-tuna, $alpha: 0.5);
-    }
-
-    .flex {
-        justify-content: space-between;
-    }
-
-//=============================================================================
-// _header.scss - Header Logo
-//=============================================================================
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    transition: all 1s;
 
     .header-logo {
         width: 250px;
     }
 
-//=============================================================================
-// _header.scss - Header Nav Bar
-//=============================================================================
+    .flex {
 
-    .header-nav-bar {
+        justify-content: space-between;
+
         ul {
 
+            float: right;
+    
             li {
                 margin-left: 50px;
+
+                &:hover {
+                    @include text-link-hover;
                 }
-            }
-        }
-    
-//=============================================================================
-// _header.scss - Header Jumbotron
-//=============================================================================
 
-    .header-jumbotron {
-        height: 100%;
-        
-        .flex {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+                &:active {
+                    @include text-link-active;
+                }
+                }
         }
-
-        ul {
-            li {
-                margin: 0 5px;
-            }
-        }
-
     }
 }
