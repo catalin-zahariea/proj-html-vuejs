@@ -218,6 +218,7 @@ p {
   background-color: #fcd66c;
   border: none;
   transition: all 0.1s;
+  font-size: 12px;
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -236,6 +237,7 @@ p {
   background-color: transparent;
   border: 1px solid #ffffff;
   transition: all 0.1s;
+  font-size: 12px;
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -259,7 +261,6 @@ p {
   cursor: pointer;
 }
 .btn-border:active {
-  transform: scale(0.95);
   cursor: pointer;
 }
 
@@ -312,7 +313,7 @@ header .flex ul li:active {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.jumbotron .container button {
+.jumbotron .container a {
   margin: 0 5px;
 }
 
@@ -435,7 +436,7 @@ footer .footer-jumbo .text-subtitle {
   width: 65%;
   margin: auto;
 }
-footer .footer-jumbo button {
+footer .footer-jumbo a {
   margin: 0 10px;
 }
 footer .footer-logo img {

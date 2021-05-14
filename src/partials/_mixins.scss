@@ -21,6 +21,7 @@
     border: none;
     transition: all 0.1s;
     // Font
+    font-size: 12px;
     text-transform: uppercase;
     color: $color-cube-white;
 }
@@ -42,6 +43,7 @@
     border: 1px solid $color-cube-white;
     transition: all 0.1s;
     // Font
+    font-size: 12px;
     text-transform: uppercase;
     color: $color-cube-white;
 }
@@ -51,7 +53,6 @@
 }
 
 @mixin btn-border-active {
-    transform: scale(0.95);
     cursor: pointer;
 }
 

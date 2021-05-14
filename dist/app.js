@@ -39,19 +39,23 @@ var app = new Vue({
     values: [{
       icon: "fas fa-tint",
       name: "Clean Water",
-      description: "Nullam convallis, orci in congue aliquet, diam mauris cursa urna, Id maximus lectus magna maximus"
+      description: "Nullam convallis, orci in congue aliquet, diam mauris cursa urna, Id maximus lectus magna maximus",
+      link: "#"
     }, {
       icon: "fas fa-stethoscope",
       name: "Vaccinations",
-      description: "Nullam convallis, orci in congue aliquet, diam mauris cursa urna, Id maximus lectus magna maximus"
+      description: "Nullam convallis, orci in congue aliquet, diam mauris cursa urna, Id maximus lectus magna maximus",
+      link: "#"
     }, {
       icon: "fas fa-graduation-cap",
       name: "Education",
-      description: "Nullam convallis, orci in congue aliquet, diam mauris cursa urna, Id maximus lectus magna maximus"
+      description: "Nullam convallis, orci in congue aliquet, diam mauris cursa urna, Id maximus lectus magna maximus",
+      link: "#"
     }, {
       icon: "fab fa-pagelines",
       name: "Farming",
-      description: "Nullam convallis, orci in congue aliquet, diam mauris cursa urna, Id maximus lectus magna maximus"
+      description: "Nullam convallis, orci in congue aliquet, diam mauris cursa urna, Id maximus lectus magna maximus",
+      link: "#"
     }],
     recentCauses: [{
       link: "avada-charity-fair-trade-featured.jpg",
